@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+
+    <style>
+        .main{
+            width:300px;
+            color:blue;
+            padding:35px;
+            font-size:30px;
+        }
+        .wrapper{
+            display:flex;
+            justify-content:center;
+            height:100vh;
+        }
+
+        . content{
+            text-align:center;
+            border:2x solid black;
+            padding:20px;
+        } 
+
+
+        
+    </style>    
+</head>
+
+
+<body bgcolor="yellow" >
+    <div class="wrapper">
+        <div class ="content">
+
+            <h2 class ="main">Login Page</h2>
+   
+
+            
+            <form method="POST" action=".">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" style="background-color:blue; color:white;">Submit</button>
+        </div>   
+    </div>     
+            
+</form>
+</body>
+</html>

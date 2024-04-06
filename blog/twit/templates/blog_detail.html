@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+</head>
+<body>
+    <h2>{{ blog.title }} {{blog_number}}</h2>
+    <p>{{ blog.content }}</p>
+    <p>{{ blog.add_date}}</p>
+    <p>{{blog.likes}}</p>
+    <p>{{blog.views}}</p>
+    <!-- You can display more details about the blog here -->
+    <a class="btn btn-primary" href="{% url 'update_blog' pk=blog.pk %}">Update</a>
+        <a class="btn btn-danger" href="{% url 'delete_blog' pk=blog.pk %}">Delete</a>
+        
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign page</title>
+
+    <style>
+        .main{
+            width:300px;
+            background-color:red;
+            color:black;
+            padding:35px;
+            font-size:30px;
+        }
+
+        .wrapper{
+            display:flex;
+            justify-content:center;
+            height:100vh;
+        }
+
+        . content{
+            text-align:center;
+            border:2x solid black;
+            padding:20px;
+        } 
+
+    </style>    
+</head>
+<body >
+
+    <div class="wrapper">
+    <div class ="content">
+    <div class ="row justify-content-center">
+        <div class=<"col-sm-5">
+
+            <h2 class ="main">Register Form</h2>
+            
+            <form method="POST" >
+
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button type="submit"style="background-color:blue; color:white;">submit</button>
+</form>
+</body>
+</html>

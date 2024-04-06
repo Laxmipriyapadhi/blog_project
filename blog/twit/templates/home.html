@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+
+        body {
+            text-align:center;
+            background-image:url(https://womensfitness.co.uk/wp-content/uploads/sites/3/2022/11/Shutterstock_1675475479.jpg);
+            background-repeat: no-repeat;
+            background-size:50%;
+            background-position:center bottom;
+            height:100vh;
+            margin:0;
+        }
+
+        
+        .main{
+            padding:20px;
+            font-size:30px;
+            background-color:blue;
+            
+
+        }
+    
+    
+       
+       
+    </style>
+</head>
+<body>
+     <h2 class="main">
+        <span  style="color:yellow;"> ~</span>
+        <span  style="color:yellow;"> !!!</span>
+        <span  style="color:yellow;"> ~</span>
+        <span  style="color:fuchsia;"> WELCOME </span>
+        <span  style="color:yellow;"> TO </span>
+        <span  style="color:orange;"> MY </span>
+        <span  style="color:lime;"> BLOG </span>
+        <span  style="color:yellow;"> ~</span>
+        <span  style="color:yellow;"> !!!</span>
+        <span  style="color:yellow;"> ~</span>
+    </h2>    
+      
+    <p>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a> | 
+            <a href="{% url 'create_blog' %}">Create Blog</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a> | 
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </p>
+    <!-- Add a list of blogs with links to detail page -->
+    <ul>
+        {% for blog in blogs %}
+            <li><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
